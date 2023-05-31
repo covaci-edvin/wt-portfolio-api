@@ -1,0 +1,10 @@
+[
+  {
+    "_id": "5c8a1d5b0190b214360dc057",
+    "name": "Elias Apăscăriței",
+    "email": "elias_apascaritei@yahoo.com",
+    "role": "admin",
+    "active": true,
+    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+  }
+]
