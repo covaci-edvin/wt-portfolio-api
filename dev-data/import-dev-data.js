@@ -2,6 +2,7 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const User = require('../models/userModel');
+const About = require('../models/aboutModel');
 
 dotenv.config({ path: './config.env' });
 
@@ -17,11 +18,11 @@ mongoose
   })
   .then(() => console.log('DB connection successful!'));
 
-const users = JSON.parse(fs.readFileSync(`${__dirname}/user.json`, 'utf-8'));
+const data = JSON.parse(fs.readFileSync(`${__dirname}/data.json`, 'utf-8'));
 
 const importData = async () => {
   try {
-    await User.create(users, { validateBeforeSave: false });
+    await About.create(data, { validateBeforeSave: false });
     console.log('Data succesfully loaded!');
   } catch (err) {
     console.log(err);

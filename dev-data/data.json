@@ -1,10 +1,6 @@
 [
   {
-    "_id": "5c8a1d5b0190b214360dc057",
-    "name": "Elias Apăscăriței",
-    "email": "elias_apascaritei@yahoo.com",
-    "role": "admin",
-    "active": true,
-    "password": "$2a$12$Q0grHjH9PXc6SxivC8m12.2mZJ9BbKcgFpwSG4Y1ZEII8HJVzWeyS"
+    "experience": "7",
+    "aboutInfo": "I am Apascaritei Elias-Olivian, a Senior Software Development Engineer with 8+ years of experience. I specialize in Scala development and have worked on various projects utilizing technologies such as Java, Salesforce, JavaScript, AngularJs, RabbitMQ, MongoDB, PostgreSQL, and AWS. Recently, I focused on building a Microservice platform in Scala using Akka for event-driven programming and REST/RabbitMQ for interservice communication. I am also enthusiastic about learning new technologies like TensorFlow and ML in my spare time. I am committed to delivering high-quality software solutions and collaborating with talented individuals. Feel free to explore my portfolio and contact me for further information or collaboration opportunities."
   }
 ]

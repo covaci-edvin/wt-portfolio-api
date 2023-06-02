@@ -1,5 +1,6 @@
 const AppError = require('../utils/appError');
 const catchAsync = require('../utils/catchAsync');
+const APIFeatures = require('../utils/apiFeatures');
 
 exports.deleteOne = (Model) =>
   catchAsync(async (req, res, next) => {
@@ -9,7 +10,7 @@ exports.deleteOne = (Model) =>
       return next(new AppError('No item found with that id', 404));
     }
 
-    req.status(202).json({
+    res.status(202).json({
       status: 'success',
       data: null,
     });
@@ -17,6 +18,8 @@ exports.deleteOne = (Model) =>
 
 exports.updateOne = (Model) =>
   catchAsync(async (req, res, next) => {
+    if (req.file) req.body.photo = req.file.filename;
+
     const doc = await Model.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true,
@@ -36,6 +39,8 @@ exports.updateOne = (Model) =>
 
 exports.createOne = (Model) =>
   catchAsync(async (req, res, next) => {
+    if (req.file) req.body.photo = req.file.filename;
+
     const doc = await Model.create(req.body);
     res.status(201).json({
       status: 'success',

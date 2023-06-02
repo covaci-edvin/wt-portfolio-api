@@ -6,6 +6,11 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const compression = require('compression');
 const userRoutes = require('./routes/userRoutes');
+const aboutRoutes = require('./routes/aboutRoutes');
+const skillRoutes = require('./routes/skillRoutes');
+const experienceRoutes = require('./routes/experienceRoutes');
+const recommendationRoutes = require('./routes/recommendationRoutes');
+const projectRoutes = require('./routes/projectRoutes');
 const AppError = require('./utils/appError');
 
 const app = express();
@@ -28,6 +33,11 @@ app.use((req, res, next) => {
 
 //Routes
 app.use('/api/v1/user', userRoutes);
+app.use('/api/v1/about', aboutRoutes);
+app.use('/api/v1/skill', skillRoutes);
+app.use('/api/v1/experience', experienceRoutes);
+app.use('/api/v1/recommendation', recommendationRoutes);
+app.use('/api/v1/project', projectRoutes);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl}`, 404));
