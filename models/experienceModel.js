@@ -14,6 +14,10 @@ const experienceSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please provide the company name'],
   },
+  companyLink: {
+    type: String,
+    required: [true, 'Please provide the company link'],
+  },
   photo: {
     type: String,
     default: 'defaultCompany.png',
