@@ -10,7 +10,7 @@ const aboutRoutes = require('./routes/aboutRoutes');
 const skillRoutes = require('./routes/skillRoutes');
 const experienceRoutes = require('./routes/experienceRoutes');
 const recommendationRoutes = require('./routes/recommendationRoutes');
-const projectRoutes = require('./routes/projectRoutes');
+const projectRoutes = require('./routes/projectRoutes.js');
 const AppError = require('./utils/appError');
 
 const app = express();
@@ -38,6 +38,7 @@ app.use('/api/v1/skill', skillRoutes);
 app.use('/api/v1/experience', experienceRoutes);
 app.use('/api/v1/recommendation', recommendationRoutes);
 app.use('/api/v1/project', projectRoutes);
+app.use(express.static('public'));
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl}`, 404));

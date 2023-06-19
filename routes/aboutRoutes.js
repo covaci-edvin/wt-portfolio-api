@@ -4,8 +4,8 @@ const authController = require('../controllers/authController');
 
 const router = express.Router();
 
-router.get('/me', aboutController.getAbout);
+router.get('/', aboutController.getAbout);
 router.use(authController.protect);
-router.patch('/me/:id', aboutController.updateAbout);
+router.patch('/:id', aboutController.updateAbout);
 
 module.exports = router;
